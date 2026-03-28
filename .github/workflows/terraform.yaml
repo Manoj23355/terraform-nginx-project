@@ -43,8 +43,8 @@ jobs:
       #   run: terraform force-unlock -force 335cdb5d-e150-dab9-55bf-db6858415e15
 
       - name: Terraform Plan
-        run: terraform plan -var="key_name=${{ secrets.KEY_NAME }}"
+        run: terraform plan
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve -var="key_name=${{ secrets.KEY_NAME }}" 
+        run: terraform apply -auto-approve
